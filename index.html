@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Auth & Firestore Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Firebase Auth & Firestore</h1>
+        <div id="auth-status"></div>
+    </header>
+
+    <main>
+        <section id="auth-section">
+            <h2>Autenticación</h2>
+
+            <div id="auth-forms">
+                <div class="auth-form">
+                    <h3>Registrarse</h3>
+                    <input type="email" id="signup-email" placeholder="Email">
+                    <input type="password" id="signup-password" placeholder="Contraseña">
+                    <button id="btn-signup">Registrar</button>
+                    <p id="signup-error" class="error-message"></p>
+                </div>
+
+                <div class="auth-form">
+                    <h3>Iniciar Sesión</h3>
+                    <input type="email" id="login-email" placeholder="Email">
+                    <input type="password" id="login-password" placeholder="Contraseña">
+                    <button id="btn-login">Iniciar Sesión</button>
+                    <p id="login-error" class="error-message"></p>
+                </div>
+            </div>
+
+            <button id="btn-logout" class="hidden">Cerrar Sesión</button>
+        </section>
+
+        <hr>
+
+        <section id="firestore-section">
+            <h2>Listado de Alumnos (Firestore)</h2>
+            <p>Solo visible si estás autenticado.</p>
+            <div id="alumnos-container">
+                </div>
+
+            <div id="add-alumno-form" class="hidden">
+                <h3>Añadir Nuevo Alumno</h3>
+                <input type="text" id="new-alumno-nombre" placeholder="Nombre">
+                <input type="text" id="new-alumno-carrera" placeholder="Carrera">
+                <input type="number" id="new-alumno-edad" placeholder="Edad">
+                <input type="text" id="new-alumno-materias" placeholder="Materias (separadas por comas)">
+                <button id="btn-add-alumno">Añadir Alumno</button>
+                <p id="add-alumno-error" class="error-message"></p>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
